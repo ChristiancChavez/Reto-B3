@@ -1,0 +1,88 @@
+header {
+    background: black;
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    align-content: center;
+    text-align: center;
+    padding: 1%;
+}
+
+header h1 {
+    font-size: 30px;
+    color: rgb(0, 255, 179);
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.linkNav {
+    width: 50%;
+    color: rgb(0, 195, 255);
+    margin-bottom: 3%;
+    padding: 2% 0;
+}
+.linkNav:hover {
+    color: white;
+    background: rgb(0, 195, 255);
+    cursor: pointer;
+}
+
+main {
+    padding: 5%;
+    background: rgb(0, 195, 255);
+}
+
+section {
+    background: rgb(0, 102, 255);
+    padding: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row wrap; 
+}
+.user {
+    border-left: solid 1px black;
+    border-right: solid 1px black;
+    border-radius: 4px;
+    display: flex;
+    text-align: center;
+    flex-flow: column nowrap;
+    justify-items: space-around;
+    align-items: center;
+    padding: 1%;
+    font-size: 15px;
+    width: 20%;
+    background: white;
+    margin: 5%;
+}
+.userImage {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: solid 1px lightgray;
+}
+.userName {
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+}
+.marginUser {
+    margin: 2%;
+}
+.userGender {
+    color: rgb(29, 28, 28);
+    
+}
+.userAge {
+    color: rgb(44, 43, 43);
+}
+.userAddress {
+    color: rgb(63, 62, 62);
+}
+.userPhone {
+    color: rgb(85, 81, 81);
+}
