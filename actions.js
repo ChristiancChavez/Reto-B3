@@ -1,29 +1,41 @@
-let containerCharaters = document.getElementById('characters');
-
-fetch("https://randomuser.me/api/?results=20").then((response) =>{
+fetch("https://randomuser.me/api/?results=21").then((response) =>{
     return response.json();
 })
 .then((response) => {
-    let card = document.createElement('div');
-    card.classList.add('user');
+    let containerCharaters = document.getElementById('characters');
+    
     response.results.map(person => {
-        const imagePerson = document.createElement('img');
-        imagePerson.classList.add('userImage marginUser');
+        let card = document.createElement('div');
+        card.classList.add('user');
+
+        let imagePerson = document.createElement('img');
+        imagePerson.classList.add('userImage');
+        imagePerson.classList.add('marginUser');
         imagePerson.src= person.picture.medium;
-        const namePerson = document.createElement('span');
-        namePerson.classList.add('userName marginUser');
+
+        let namePerson = document.createElement('span');
+        namePerson.classList.add('userName');
+        namePerson.classList.add('marginUser');
         namePerson.innerHTML = person.name.first;
-        const genderPerson = document.createElement('span');
-        genderPerson.classList.add('userGender marginUser');
+
+        let genderPerson = document.createElement('span');
+        genderPerson.classList.add('userGender');
+        genderPerson.classList.add('marginUser');
         genderPerson.innerHTML = person.gender;
-        const agePerson = document.createElement('span');
-        agePerson.classList.add('userAge marginUser');
+
+        let agePerson = document.createElement('span');
+        agePerson.classList.add('userAge');
+        agePerson.classList.add('marginUser');
         agePerson.innerHTML = person.dob.age;
-        const addressPerson = document.createElement('span');
-        addressPerson.classList.add('userAddress marginUser');
+
+        let addressPerson = document.createElement('span');
+        addressPerson.classList.add('userAddress');
+        addressPerson.classList.add('marginUser');
         addressPerson.innerHTML = person.location.city;
-        const phonePerson = document.createElement('span');
-        phonePerson.classList.add('userPhone marginUser');
+
+        let phonePerson = document.createElement('span');
+        phonePerson.classList.add('userPhone');
+        phonePerson.classList.add('marginUser');
         phonePerson.innerHTML = person.phone;
         
         containerCharaters.appendChild(card);
