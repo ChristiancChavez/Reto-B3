@@ -9,7 +9,7 @@ header {
 }
 
 header h1 {
-    font-size: 30px;
+    font-size: 50px;
     color: rgb(0, 255, 179);
 }
 
@@ -33,11 +33,11 @@ nav {
 
 main {
     padding: 5%;
-    background: rgb(0, 195, 255);
+    background: rgb(0, 255, 179);
 }
 
 section {
-    background: rgb(0, 102, 255);
+    background: rgb(0, 195, 255);
     padding: 5%;
     display: flex;
     justify-content: center;
@@ -55,15 +55,16 @@ section {
     align-items: center;
     padding: 1%;
     font-size: 15px;
-    width: 20%;
-    background: white;
+    width: 150px;
+    background: rgb(0, 255, 179);
     margin: 5%;
+    cursor: pointer;
 }
 .userImage {
     width: 120px;
     height: 120px;
     border-radius: 50%;
-    border: solid 1px lightgray;
+    border: solid 1px white;
 }
 .userName {
     color: black;
@@ -85,4 +86,16 @@ section {
 }
 .userPhone {
     color: rgb(85, 81, 81);
+}
+
+@media screen and (max-width:800px) {
+    .userImage {
+        width: 100px;
+        height: 100px;
+    }
+
+    .user {
+        width: 200px;
+        font-size: 20px;
+    }
 }

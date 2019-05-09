@@ -1,13 +1,18 @@
+
+let containerCharaters;
 fetch("https://randomuser.me/api/?results=21").then((response) =>{
     return response.json();
 })
 .then((response) => {
-    let containerCharaters = document.getElementById('characters');
-    
+    console.log(response); 
+    renderProfiles = () => {    
+    containerCharaters = document.getElementById('characters');
+    containerCharaters.innerHTML = '';
     response.results.map(person => {
         let card = document.createElement('div');
         card.classList.add('user');
-
+        card.setAttribute('id',`${person.login.uuid}`);
+        card.onclick = function(){detailsProfile(person.login.uuid)};
         let imagePerson = document.createElement('img');
         imagePerson.classList.add('userImage');
         imagePerson.classList.add('marginUser');
@@ -41,10 +46,27 @@ fetch("https://randomuser.me/api/?results=21").then((response) =>{
         containerCharaters.appendChild(card);
         card.appendChild(imagePerson); 
         card.appendChild(namePerson)
-        card.appendChild(genderPerson);
-        card.appendChild(agePerson);
-        card.appendChild(addressPerson);
-        card.appendChild(phonePerson);
-   })
+        
+
+        detailsProfile = (idProfileSelected) => {
+            const profileSelected = document.querySelectorAll('.user');
+                profileSelected.forEach(function (cardProfile) {
+                if(cardProfile.id === idProfileSelected){
+                containerCharaters.innerHTML = '';
+                containerCharaters.appendChild(cardProfile);
+                cardProfile.appendChild(genderPerson);
+                cardProfile.appendChild(agePerson);
+                cardProfile.appendChild(addressPerson);
+                cardProfile.appendChild(phonePerson);
+                console.log(profileSelected ,'i clicked the userprofile');
+                }
+            });
+            
+        };
+   })}
+   renderProfiles();
 })
 .catch(err => console.log(err.message));
+
+const buttonProfilesRender = document.getElementById('profiles');
+buttonProfilesRender.onclick = function(){renderProfiles()};
